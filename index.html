@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      New Perspectives on HTML5, CSS3, and JavaScript 6th Edition
+      Tutorial 13
+      Case Problem 3
+
+      Media Arts Society Registration Form
+      Author: Hesbon Osoro
+      Date: 12/10/22 
+
+      Filename:  mas_register.html
+
+   -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MAS Registration Form</title>
+    <link href="mas_base.css" rel="stylesheet" />
+    <link href="mas_styles.css" rel="stylesheet" />
+    <script src="mas_register.js" async></script>
+  </head>
+
+  <body>
+    <header>
+      <img src="mas_logo.png" alt="Media Arts Society" id="logoimg" />
+      <nav class="horizontal">
+        <ul>
+          <li><a href="#">Memberships</a></li>
+          <li><a href="#">Conferences</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Education</a></li>
+          <li><a href="#">Jobs</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article>
+      <h1>MAS Annual Conference</h1>
+      <p>
+        MAS 22<br />
+        Sierra Vegas Resort<br />
+        Las Vegas, Nevada<br />
+        April 16 &mdash; April 19, 2018
+      </p>
+      <p>
+        The premier conference for multimedia technlogy celebrates its 22nd
+        anniversay with extensive coverage of new and exciting developments in
+        media and entertainment.
+      </p>
+      <p>
+        Please join us by filling out your registration information below. Go to
+        the <a href="#">Accommodation Page</a> to reserve lodging at the
+        conference center.
+      </p>
+      <p>
+        Email <a href="#">mas22@example.com</a> for questions related to
+        accommodation, traveling to the conference, or submitting presentation
+        proposals.
+      </p>
+    </article>
+
+    <section id="section1">
+      <form id="regForm" name="regForm" method="post" action="mas_reg2.html">
+        <h1>MAS22 Registration Form</h1>
+
+        <fieldset id="contactInfo">
+          <label for="fnBox">First Name*</label>
+          <input name="firstName" id="fnBox" type="text" required />
+
+          <label for="lnBox">Last Name*</label>
+          <input name="lastName" id="lnBox" type="text" required />
+
+          <label for="groupBox">Company or University</label>
+          <input name="group" id="groupBox" type="text" />
+
+          <label for="mailBox">E-mail*</label>
+          <input name="email" id="mailBox" type="email" required />
+
+          <label for="phoneBox">Phone Number*</label>
+          <input
+            name="phoneNumber"
+            id="phoneBox"
+            type="tel"
+            pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+            required
+            placeholder="(nnn) nnn-nnnn"
+          />
+        </fieldset>
+
+        <fieldset id="confChoices">
+          <label for="sessionBox">Session Packs</label>
+          <select id="sessionBox" name="sessionOption" size="5" required>
+            <option value="95">Exhibits Only ($95)</option>
+            <option value="215">3 Session Pack ($215)</option>
+            <option value="420">6 Session Pack ($420)</option>
+            <option value="595">Session Pass ($595)</option>
+            <option value="845">VIP Pass ($845)</option>
+          </select>
+          <label for="banquet">MAS22 Banquet ($55 ea.)</label>
+          <input
+            type="number"
+            min="0"
+            max="10"
+            id="banquetBox"
+            name="banquetGuests"
+          /><span> attendees</span>
+
+          <label for="mediaPack">MAS22 Media Pack ($115)</label>
+          <input type="checkbox" name="mediaPack" id="mediaCB" value="115" />
+        </fieldset>
+        <input id="regSubmit" type="submit" value="continue" />
+      </form>
+    </section>
+
+    <aside id="reg1Aside">
+      <table>
+        <caption>
+          Shopping Cart
+        </caption>
+        <tr>
+          <th>Name</th>
+          <td><span id="regName"></span></td>
+        </tr>
+        <tr>
+          <th>Company</th>
+          <td><span id="regGroup"></span></td>
+        </tr>
+        <tr>
+          <th>E-mail</th>
+          <td><span id="regEmail"></span></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td><span id="regPhone"></span></td>
+        </tr>
+        <tr>
+          <th>Session</th>
+          <td><span id="regSession"></span></td>
+        </tr>
+        <tr>
+          <th>Banquet Guests ($55 ea.)</th>
+          <td><span id="regBanquet"></span></td>
+        </tr>
+        <tr>
+          <th>Media Pack ($115)</th>
+          <td><span id="regPack"></span></td>
+        </tr>
+        <tr>
+          <th>TOTAL</th>
+          <td><span id="regTotal"></span></td>
+        </tr>
+      </table>
+    </aside>
+
+    <nav id="columns">
+      <ul>
+        <li><a href="#">home page</a></li>
+        <li><a href="#">conference schedule</a></li>
+        <li><a href="#">speaker bios</a></li>
+        <li><a href="#">general session</a></li>
+        <li><a href="#">exhibits</a></li>
+        <li><a href="#">programs</a></li>
+        <li><a href="#">workshops</a></li>
+        <li><a href="#">committees</a></li>
+        <li><a href="#">panel discussion</a></li>
+        <li><a href="#">demonstrations</a></li>
+        <li><a href="#">travel info</a></li>
+        <li><a href="#">accommodations</a></li>
+        <li><a href="#">banquet</a></li>
+        <li><a href="#">family attractions</a></li>
+        <li><a href="#">registration</a></li>
+        <li><a href="#">MAS home page</a></li>
+      </ul>
+    </nav>
+
+    <footer>Media Arts Society &copy; 2018 All Rights Reserved</footer>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      New Perspectives on HTML5, CSS3, and JavaScript 6th Edition
+      Tutorial 13
+      Case Problem 3
+
+      Media Arts Society Registration Form #2
+      Author: Hesbon Osoro
+      Date: 12/10/22   
+
+      Filename:  mas_reg2.html
+
+   -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MAS Registration Payment Form</title>
+    <link href="mas_base.css" rel="stylesheet" />
+    <link href="mas_styles.css" rel="stylesheet" />
+    <script src="mas_reg2.js" async></script>
+  </head>
+
+  <body>
+    <header>
+      <img src="mas_logo.png" alt="Media Arts Society" id="logoimg" />
+      <nav class="horizontal">
+        <ul>
+          <li><a href="#">Memberships</a></li>
+          <li><a href="#">Conferences</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Education</a></li>
+          <li><a href="#">Jobs</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside id="reg2Aside">
+      <table>
+        <caption>
+          Registration Information
+        </caption>
+        <tr>
+          <th>Name</th>
+          <td><span id="regName"></span></td>
+        </tr>
+        <tr>
+          <th>Company</th>
+          <td><span id="regGroup"></span></td>
+        </tr>
+        <tr>
+          <th>E-mail</th>
+          <td><span id="regEmail"></span></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td><span id="regPhone"></span></td>
+        </tr>
+        <tr>
+          <th>Session</th>
+          <td><span id="regSession"></span></td>
+        </tr>
+        <tr>
+          <th>Banquet Guest ($55 ea.)</th>
+          <td><span id="regBanquet"></span></td>
+        </tr>
+        <tr>
+          <th>MAS22 Media Pack ($115)</th>
+          <td><span id="regPack"></span></td>
+        </tr>
+        <tr>
+          <th>TOTAL</th>
+          <td><span id="regTotal"></span></td>
+        </tr>
+      </table>
+    </aside>
+
+    <section id="section2">
+      <h1>MAS22 Payment Form</h1>
+      <form id="credit" name="credit" method="post" action="co_final.html">
+        <fieldset id="creditcard">
+          <legend>Credit Information</legend>
+
+          <label for="cardHolder">Card Holder*</label>
+          <input name="cardHolder" id="cardHolder" required type="text" />
+
+          <label>Credit Company*</label>
+          <fieldset id="cards">
+            <label class="cardLabel">
+              <input name="company" value="amex" type="radio" required />
+              <img src="mas_amex.png" alt="American Express" />
+            </label>
+            <label class="cardLabel">
+              <input name="company" value="discover" type="radio" />
+              <img src="mas_discover.png" alt="Discover" />
+            </label>
+            <label class="cardLabel">
+              <input name="company" value="master" type="radio" />
+              <img src="mas_master.png" alt="MasterCard" />
+            </label>
+            <label class="cardLabel">
+              <input name="company" value="visa" type="radio" />
+              <img src="mas_visa.png" alt="Visa" />
+            </label>
+          </fieldset>
+
+          <label for="cardNumber">Credit Card Number*</label>
+          <input
+            name="cardNumber"
+            id="cardNumber"
+            required
+            type="text"
+            pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+          />
+
+          <label for="expDate">Expiration Date*</label>
+          <input
+            name="expDate"
+            id="expDate"
+            required
+            type="text"
+            placeholder="mm/yyyy"
+          />
+
+          <label for="cvc">CVC*</label>
+          <input name="cvc" id="cvc" required pattern="^\d{3,4}$" type="text" />
+        </fieldset>
+
+        <p id="footnote">* - Required Item</p>
+        <input type="button" id="subButton" value="continue" />
+      </form>
+    </section>
+
+    <nav id="columns">
+      <ul>
+        <li><a href="#">home page</a></li>
+        <li><a href="#">conference schedule</a></li>
+        <li><a href="#">speaker bios</a></li>
+        <li><a href="#">general session</a></li>
+        <li><a href="#">exhibits</a></li>
+        <li><a href="#">programs</a></li>
+        <li><a href="#">workshops</a></li>
+        <li><a href="#">committees</a></li>
+        <li><a href="#">panel discussion</a></li>
+        <li><a href="#">demonstrations</a></li>
+        <li><a href="#">travel info</a></li>
+        <li><a href="#">accommodations</a></li>
+        <li><a href="#">banquet</a></li>
+        <li><a href="#">family attractions</a></li>
+        <li><a href="#">registration</a></li>
+        <li><a href="#">MAS home page</a></li>
+      </ul>
+    </nav>
+
+    <footer>Media Arts Society &copy; 2018 All Rights Reserved</footer>
+  </body>
+</html>
